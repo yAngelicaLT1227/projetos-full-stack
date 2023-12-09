@@ -1,0 +1,32 @@
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative; /* Importante para o posicionamento absoluto do submenu */
+}
+
+/* Estilize o botão "Categorias" */
+.menu ul li.dropdown button {
+    background: #3498db;
+    color: #fff;
+}
+
+/* Estilize o submenu e oculte-o inicialmente */
+.menu ul li.dropdown .submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Posicione abaixo do botão "Categorias" */
+    left: 0;
+    background: #fff;
+    padding: 10px;
+    z-index: 1; /* Para garantir que esteja acima de outros elementos */
+}
+
+/* Mostrar o submenu quando o botão "Categorias" é hover */
+.menu ul li.dropdown:hover .submenu {
+    display: block;
+}

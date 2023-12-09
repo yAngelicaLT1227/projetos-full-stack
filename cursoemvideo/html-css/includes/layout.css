@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+  
+@keyframes blink {
+    0%, 50%, 100% {
+      border-left-color: transparent;
+      color: #000000;
+    }
+    25%, 75% {
+      border-left-color: #ffffff;
+      color: #ffffff;
+    }
+  }
+
+*{
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+body{
+    margin: 0;
+    background: #dfdbdb88;
+}
+
+button{
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: none;
+}
+
+.barra{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 100%;
+    background: linear-gradient(to top, #3498db, #8e44ad);
+    transition: all 0.4s;
+    cursor: none;
+   /* animation: piscar 2s infinite alternate; /* 2s para a duração, 'alternate' para inverter a direção */
+}
+
+@keyframes piscar {
+    from {
+        transform: translateY(0); /* A posição inicial é sem movimento */
+    }
+    to {
+        transform: translateY(10px); /* A posição final, ajuste conforme necessário */
+    }
+}
+
+body.open .barra{
+    width: 240px;
+}
+
+.barra-interna{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+}
+.barra-h {
+    width: 100%;
+    background: linear-gradient(to left,  #3498db, #8e44ad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px; 
+    list-style: none;
+    padding: 0;
+}
+
+.barra-h li {
+    margin: 0 10px; /* Espaçamento entre os itens, ajuste conforme necessário */
+}
+
+/* Estilo para os botões nos itens */
+.barra-h button {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/* Estilo para os links nos botões */
+.barra-h a {
+    text-decoration: none; /* Removendo sublinhado padrão nos links */
+    color: #fff; /* Cor do texto, substitua pela cor desejada */
+}
+
+/* Estilo para as imagens nos links */
+.barra-h img {
+    width: 30px; /* Largura da imagem, ajuste conforme necessário */
+    height: 30px; /* Altura da imagem, ajuste conforme necessário */
+}
+
+.barra-header {
+    display: flex;
+    align-items: center;
+    height: 68px;
+    padding: 0 1.25rem 0 0;
+    background: linear-gradient(to right, rgba(57, 73, 171, 0.3), rgba(142, 68, 173, 0.3));
+    border-left: 3px solid transparent;
+    transition: all 0.4s;
+}
+.barra-header:hover{
+    border-left: 3px solid #ffffff;
+}
+
+.barra-burger{
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+
+}
+
+.barra-burger > i, body.open .barra-burger > i{
+    font-size: 25px;
+    color: #000000;
+    transition: all 0.4s;
+}
+
+.barra-burger:hover > i, body.open .barra-burger:hover > i{
+    color: #ffffff;
+    animation: blink 3s infinite;
+}
+.barra-logo{
+    height: 25px;
+    place-items: right;
+    padding-right: 10px;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+body.open .barra-logo{
+    opacity: 1;
+    transition: all 0.4s;
+}
+.barra-menu{
+    display: grid;
+}
+
+.barra-menu > button {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 55px;
+    font-family: "Ubuntu";
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1;
+    padding: 0 22px;
+    border-left: 3px solid transparent;
+    transition: all 0.4s;
+  }
+
+  .barra-menu > button:hover {
+    animation: blink 3s infinite;
+  }
+  
+.barra-menu > button.has-border{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 1rem;
+}
+
+.barra-menu > button > i{
+    font-size: 25px;
+    color: #000000;
+    transition: all 0.4s;
+}
+.barra-menu > button:hover > i, .barra-menu > button:hover > span{
+    color: #ffffff;
+    animation: blink 3s infinite;
+}
+
+.barra-menu > button > span{
+    color: #000000;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+body.open .barra-menu > button > span{
+    opacity: 1;
+    transition: all 0.4s;
+}
+
